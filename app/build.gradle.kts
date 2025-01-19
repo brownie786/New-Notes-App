@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.newnotesapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.newnotesapp"
@@ -28,6 +28,9 @@ android {
             )
         }
     }
+     buildFeatures{
+         viewBinding = true
+     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
