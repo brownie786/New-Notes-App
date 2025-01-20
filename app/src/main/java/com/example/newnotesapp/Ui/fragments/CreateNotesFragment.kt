@@ -1,11 +1,10 @@
-package com.example.newnotesapp.ui.fragments
+package com.example.newnotesapp.Ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.newnotesapp.R
 import com.example.newnotesapp.databinding.FragmentCreateNotesBinding
 
 class CreateNotesFragment : Fragment() {

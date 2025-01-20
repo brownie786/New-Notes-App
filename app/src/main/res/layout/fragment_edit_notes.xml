@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".ui.fragments.EditNotesFragment">
+    tools:context=".Ui.fragments.EditNotesFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,7 +62,6 @@
                 android:id="@+id/pYellow"
                 android:layout_marginStart="15dp"
                 android:background="@drawable/yellow_dot"/>
-
         </LinearLayout>
 
         <EditText
@@ -76,7 +75,6 @@
             android:layout_marginTop="10dp"
             android:textColorHint="#DBDBDB"
             />
-
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
