@@ -6,14 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import com.example.newnotesapp.Model.Notes
 import com.example.newnotesapp.R
+import com.example.newnotesapp.ViewModel.NotesViewModel
 import com.example.newnotesapp.databinding.FragmentCreateNotesBinding
 import java.util.Date
 
 class CreateNotesFragment : Fragment() {
 
     private lateinit var binding: FragmentCreateNotesBinding
-    var priority = "1"
+    var priority: String = "1"
+    val viewModel: NotesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,6 +62,18 @@ class CreateNotesFragment : Fragment() {
         // to get current system time
         val d = Date()
         val notesDate: CharSequence = android.text.format.DateFormat.format("MMMM d, yyyy", d.time)
+
+        val data = Notes(
+            null,
+            title = title,
+            subTitle = subTitle,
+            notes = notes,
+            date = notesDate.toString(),
+            priority
+        )
+        viewModel.addNotes(data)
+
+        Toast.makeText(requireContext(), "Notes Created Successfully", Toast.LENGTH_SHORT).show()
 
         Log.e("@@@@@", "createNotes: $notesDate")
 

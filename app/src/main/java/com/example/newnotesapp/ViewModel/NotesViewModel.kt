@@ -12,7 +12,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     // Properly initialize the repository
     private val repository: NotesRepository
 
-    // Initialization block
+    // Initialization block same as Constructor in Java
     init {
         val dao = NotesDatabase.getDatabaseInstance(application).myNotesDAO()
         repository = NotesRepository(dao) // Initialize the repository only once
