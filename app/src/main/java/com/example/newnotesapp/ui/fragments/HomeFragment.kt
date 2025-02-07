@@ -27,9 +27,6 @@ class HomeFragment : Fragment() {
         viewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
             binding.rcvAllNotes.layoutManager = GridLayoutManager(requireContext(), 2)
             binding.rcvAllNotes.adapter = NotesAdapter(requireContext(), notesList)
-//            for (i in notesList){
-//                Log.e("@@@", "onCreateView: $i")
-//            }
         }
 
         binding.btnAddNotes.setOnClickListener {

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.example.newnotesapp.Model.Notes
 import com.example.newnotesapp.R
 import com.example.newnotesapp.ViewModel.NotesViewModel
@@ -77,6 +78,7 @@ class CreateNotesFragment : Fragment() {
 
         Log.e("@@@@@", "createNotes: $notesDate")
 
+        Navigation.findNavController(it!!).navigate(R.id.action_createNotesFragment_to_homeFragment)
     }
 
 }
