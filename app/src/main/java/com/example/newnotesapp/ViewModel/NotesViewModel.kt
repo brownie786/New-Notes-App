@@ -28,6 +28,21 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         return repository.getAllNotes()
     }
 
+    // Function to retrieve high priority notes as LiveData
+    fun getHighNotes(): LiveData<List<Notes>> {
+        return repository.getHighNotes()
+    }
+
+    // Function to retrieve medium priority notes as LiveData
+    fun getMediumNotes(): LiveData<List<Notes>> {
+        return repository.getMediumNotes()
+    }
+
+    // Function to retrieve low priority notes as LiveData
+    fun getLowNotes(): LiveData<List<Notes>> {
+        return repository.getLowNotes()
+    }
+
     // Function to delete a note by ID
     fun deleteNotes(id: Int) {
         repository.deleteNotes(id)
