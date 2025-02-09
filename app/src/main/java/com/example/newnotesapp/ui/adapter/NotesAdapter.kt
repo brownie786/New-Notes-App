@@ -12,8 +12,13 @@ import com.example.newnotesapp.ui.fragments.HomeFragmentDirections
 
 class NotesAdapter(
     private val context: Context,
-    private val notesList: List<Notes>
+    private var notesList: List<Notes>
 ) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+
+    fun filtering(newFilteredList: ArrayList<Notes>) {
+        notesList = newFilteredList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         val binding = ItemNotesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
